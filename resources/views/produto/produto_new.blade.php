@@ -12,24 +12,31 @@
         <form class='row' style='margin-top:25px;' action='/produtos/store' method='POST'>
             {{ csrf_field() }}
             
-            <div class='col-4'>
+            <div class='col-6'>
                 <div class='form-group'>
                     <label> Nome </label>
                     <input name='nome' class='form-control'>
                 </div>
             </div>
 
-            <div class='col-4'>
+            <div class='col-6'>
                 <div class='form-group'>
                     <label> Valor </label>
                     <input name='valor' class='form-control'>
                 </div>
             </div>
 
-            <div class='col-4'>
+            <div class='col-6'>
                 <div class='form-group'>
                     <label> Quantidade </label>
                     <input name='quantidade' class='form-control'>
+                </div>
+            </div>
+
+            <div class='col-6'>
+                <div class='form-group'>
+                    <label> Tamanho </label>
+                    <input name='tamanho' class='form-control'>
                 </div>
             </div>
 
