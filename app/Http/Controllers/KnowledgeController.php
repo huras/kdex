@@ -64,4 +64,15 @@ class KnowledgeController extends Controller
         ItemNote::create($request->all());
         return redirect(route('note.list', $id));
     }
+
+    public function parentings($id){
+        $topic = Topic::find($id);        
+        if(!$topic)
+            return 'Este topico não existe';
+
+        // $notes = ItemNote::where('topic_id', $id)->get();
+        $parentings = $topic->parents;
+        $childings = $topic->childs;
+        return view('topic/topic_parentings', compact('parentings','childings','topic'));
+    }
 }

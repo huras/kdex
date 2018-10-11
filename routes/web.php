@@ -24,6 +24,8 @@ Route::get('/notebook/note/new/{id}', 'KnowledgeController@newNote')->name('note
 Route::post('/notebook/note/new/{id}', 'KnowledgeController@storeNewNote')->name('note.store');
 Route::get('/notebook/notes/{id}', 'KnowledgeController@notes')->name('note.list');
 
+Route::get('/notebook/parentings/{id}', 'KnowledgeController@parentings')->name('parenting.list');
+
 Route::get('/produtos', 'ProdutoController@list');
 Route::get('/produtos/view', 'ProdutoController@view');
 Route::get('/produtos/view/{id}', 'ProdutoController@view');

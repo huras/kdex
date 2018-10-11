@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRelationTopicParenting extends Migration
+class CreateTopicParentingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class AddRelationTopicParenting extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('topic_parentings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('parent_id');
+            $table->integer('child_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class AddRelationTopicParenting extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('topic_parentings');
     }
 }

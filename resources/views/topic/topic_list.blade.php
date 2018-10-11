@@ -46,7 +46,7 @@
                     <a href='/notebook/view/{{$topic->id}}' title='View'>
                         <i class="fas fa-eye"></i>
                     </a>
-                    <a href='' title='Parentings'> 
+                    <a href='{{route("parenting.list", $topic->id)}}' title='Parentings'> 
                         <i class="fas fa-cogs"></i>
                     </a>
                     <a href='<?= $topic->url ?>' target='_blank' title='URLs' > 
