@@ -6,9 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use Learning\Model\Produto;
+use Learning\Model\Categoria;
+use Validator;
+use Learning\Http\Requests\ProdutoRequest;
+use Auth;
 
 class ProdutoController extends Controller
 {
+    public function _construct(){
+        if(Auth::guest()) {
+            return redirect('/login');
+        }
+    }
+
     public function list () {
         // $produtos = DB::select('select * from produtos');
         $produtos = Produto::all();
@@ -33,10 +43,11 @@ class ProdutoController extends Controller
     }
 
     public function new() {
-        return view('produto/produto_new');
+        $categorias = Categoria::all();
+        return view('produto/produto_new', compact('categorias'));
     }
 
-    public function store (Request $request) {
+    public function store (ProdutoRequest $request) {
         // $nome = $request->input('nome');
         // $quantidade = $request->input('quantidade');
         // $valor = $request->input('valor');
@@ -51,8 +62,18 @@ class ProdutoController extends Controller
 
         //ou
 
-        Produto::create($request->all());
+        // $validator = Validator::make(
+        //     ['nome' => $request->input('nome')],
+        //     ['nome' => 'required|min:3']
+        // );
 
+        // if($validator->fails()){
+        //     $msgs = $validator->messages();
+            
+        //     return redirect('/produtos/new');
+        // }
+
+        Produto::create($request->all());
         return redirect('/produtos');
     }
 }

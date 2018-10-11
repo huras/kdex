@@ -29,6 +29,7 @@
 @section('content')
     <div>
         <a href='/notebook/new'>Novo Topic </a>
+        <a href='/notebook'>Topics </a>
     </div>
     <table>
         <tr>
@@ -46,13 +47,16 @@
                         <i class="fas fa-eye"></i>
                     </a>
                     <a href='' title='Parentings'> 
-                        <i class="fas fa-cubes"></i>
+                        <i class="fas fa-cogs"></i>
                     </a>
                     <a href='<?= $topic->url ?>' target='_blank' title='URLs' > 
                         <i class="fa fa-link"></i> 
                     </a>
                     <a href='/notebook/edit/{{$topic->id}}' title='Edit'>
                         <i class="fa fa-edit"></i>
+                    </a>
+                    <a href='/notebook/notes/{{$topic->id}}' title='Notes'>
+                        <i class="fas fa-cubes"></i>
                     </a>
                 </td>
             </tr>

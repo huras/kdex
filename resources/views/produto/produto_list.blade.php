@@ -15,6 +15,7 @@
 @section('content')
     <div>
         <a href='/produtos/new'>Novo Produto </a>
+        <a href='/logout'> Logout </a>
     </div>
     <table class='table'>
         <tr>
@@ -22,6 +23,7 @@
             <td>valor</td>
             <td>descrição</td>
             <td>quantidade</td>
+            <td>categoria</td>
             <td>acao</td>
         </tr>
         @foreach ($produtos as $product)
@@ -30,6 +32,7 @@
                 <td> {{ $product->valor }} </td>
                 <td> {{ $product->descricao or 'Sem descrição' }} </td>
                 <td> {{ $product->quantidade }} </td>
+                <td> {{ $product->categoria->name }} </td>
                 <td>
                     <a href='/produtos/view?id={{ $product->id }}'> 
                         <i class="fas fa-search"></i>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AdicionaTamanhoNoProduto extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AdicionaTamanhoNoProduto extends Migration
      */
     public function up()
     {
-        Schema::table('produtos', function($table){
-            $table->string('tamanho', 100)->default('Sem tamanho')->nullable();
+        Schema::create('items', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title', 255)->nullable();
+            $table->string('quick_description', 500)->nullable();            
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AdicionaTamanhoNoProduto extends Migration
      */
     public function down()
     {
-        Schema::table('produtos', function($table){
-            $table->dropColumn('tamanho');
-        });
+        Schema::dropIfExists('items');
     }
 }

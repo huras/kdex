@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use Learning\Model\Topic;
+use Learning\Model\ItemNote;
 
 class KnowledgeController extends Controller
 {
@@ -39,5 +40,28 @@ class KnowledgeController extends Controller
         DB::insert('insert into topics (title, url) values (?,?)', array($title, $url));
 
         return redirect('/notebook');
+    }
+
+    public function notes($id){
+        $topic = Topic::find($id);        
+        if(!$topic)
+            return 'Este topico não existe';
+
+        // $notes = ItemNote::where('topic_id', $id)->get();
+        $notes = $topic->notes;
+        return view('topic/topic_notes', compact('notes','topic'));
+    }
+
+    public function newNote($id){
+        $topic = Topic::find($id);        
+        if(!$topic)
+            return 'Este topico não existe';
+
+        return view('topic/topic_new_note', compact('topic'));
+    }
+
+    public function storeNewNote(Request $request, $id){
+        ItemNote::create($request->all());
+        return redirect(route('note.list', $id));
     }
 }
