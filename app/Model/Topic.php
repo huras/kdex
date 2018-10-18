@@ -10,11 +10,11 @@ class Topic extends Model
         return $this->hasMany('Learning\Model\ItemNote');
     }
 
-    public function parents(){
-        return $this->belongsToMany('Learning\Model\Topic', 'topic_parentings', 'id', 'parent_id');
-    }
+    // public function parents(){
+    //     return $this->belongsToMany('Learning\Model\Topic', 'topic_parentings', 'id', 'parent_id');
+    // }
 
-    public function childs(){
-        return $this->belongsToMany('Learning\Model\Topic', 'topic_parentings', 'id', 'child_id');        
-    }
+    // public function childs(){
+    //     return $this->belongsToMany('Learning\Model\Topic', 'topic_parentings', 'id', 'child_id');        
+    // }
 }

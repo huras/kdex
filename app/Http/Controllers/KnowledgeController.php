@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use Learning\Model\Topic;
+use Learning\Model\TopicParenting;
 use Learning\Model\ItemNote;
 
 class KnowledgeController extends Controller
@@ -71,8 +72,18 @@ class KnowledgeController extends Controller
             return 'Este topico não existe';
 
         // $notes = ItemNote::where('topic_id', $id)->get();
-        $parentings = $topic->parents;
-        $childings = $topic->childs;
-        return view('topic/topic_parentings', compact('parentings','childings','topic'));
+        $parents = DB::table('topic_parentings')->join('topics','topic_parentings.parent_id', '=', 'topics.id')
+                                                ->select('topic_parentings.*', 'topics.*')
+                                                ->where('child_id', $id)
+                                                ->get();
+
+        $childs = DB::table('topic_parentings')->join('topics','topic_parentings.child_id', '=', 'topics.id')
+                                                ->select('topic_parentings.*', 'topics.*')
+                                                ->where('parent_id', $id)
+                                                ->get();
+
+        //  TopicParenting::where('parent_id', $id)->get();
+        // $childs = TopicParenting::where('child_id', $id)->get();
+        return view('topic/topic_parentings', compact('parents','childs','topic'));
     }
 }

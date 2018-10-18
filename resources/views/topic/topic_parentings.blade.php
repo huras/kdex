@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('title')
-    {{count($parentings)}} Notes
+    {{count($parents)}} Notes
 @endsection
 
 @section('style')
@@ -34,46 +34,36 @@
         <a href='/notebook'> Topics </a>
         <a href='{{ route("note.new", $topic->id)}}'> New Note </a>
     </div>
+
+    <br>
     Parents
     <table>
         <tr>
-            <!-- <td class='title'> Title </td> -->
-            <td class=''> Parent </td>
-            <td class=''> Child </td>
+            <td class='title'> Title </td>
         </tr>
-        
-        <?php dd($childings); ?>
 
-        <?php foreach ($parentings as $parenting) : ?>
+        <?php foreach ($parents as $parent) : ?>
             <tr>
                 <td class='content'>
-                    <?= $parenting->parent_id ?>
-                </td>
-                <td class='content'>
-                    <?= $parenting->child_id ?>
+                    <?= $parent->title ?>
                 </td>
             </tr>
         <?php endforeach ?>
         
     </table>
 
+        <br>
     Childs
     <table>
         <tr>
-            <!-- <td class='title'> Title </td> -->
-            <td class=''> Parent </td>
-            <td class=''> Child </td>
-        </tr>
+            <td class='title'> Title </td>
+        </tr>        
         
-        <?php dd($parentings); ?>
 
-        <?php foreach ($parentings as $parenting) : ?>
+        <?php foreach ($childs as $child) : ?>
             <tr>
                 <td class='content'>
-                    <?= $parenting->parent_id ?>
-                </td>
-                <td class='content'>
-                    <?= $parenting->child_id ?>
+                    <?= $child->title ?>
                 </td>
             </tr>
         <?php endforeach ?>
