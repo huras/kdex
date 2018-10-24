@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DashboardSystemController@home');
+
+Route::get('/nodes', 'NodeController@index');
+Route::get('/nodes/create', 'NodeController@create');
+Route::post('/nodes/create', 'NodeController@store');
+
+Route::get('/node-types', 'NodeTypeController@index');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/html', 'StudyController@html');
 
