@@ -23,6 +23,22 @@
         td.actions a:hover{
             text-decoration: none;
         }
+
+        .topics-table{
+            margin-top: 30px;
+            width:100%;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .topics-table i{
+            
+        }
+
+        .topics-table table{
+            margin-left: 15px;   
+        }
     </style>
 @endsection
 
@@ -30,43 +46,78 @@
     <div>
         {{$topic->title}} Notes
     </div>
-    <div>
-        <a href='/notebook'> Topics </a>
+    <div style='display:flex; flex-direction:column;'>
+        <a href='/notebook'> All Topics </a>
         <a href='{{ route("note.new", $topic->id)}}'> New Note </a>
     </div>
 
-    <br>
-    Parents
-    <table>
-        <tr>
-            <td class='title'> Title </td>
-        </tr>
-
-        <?php foreach ($parents as $parent) : ?>
+    <div class='topics-table'>
+        <i class='fa fa-umbrella'></i> Parents
+        <table>
             <tr>
-                <td class='content'>
-                    <?= $parent->title ?>
-                </td>
-            </tr>
-        <?php endforeach ?>
-        
-    </table>
+                <td class='title'> Title </td>
+                <td class='title'> Actions </td>
+            </tr>            
 
-        <br>
-    Childs
-    <table>
-        <tr>
-            <td class='title'> Title </td>
-        </tr>        
-        
+            <?php foreach ($parents as $topic) : ?>
+                <tr>
+                    <td class='title'> 
+                        <?= $topic->title ?>                        
+                    </td>
+                    <td class='actions'> 
+                        <a href='/notebook/view/{{$topic->id}}' title='View'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href='{{route("parenting.list", $topic->id)}}' title='Parentings'> 
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <a href='<?= $topic->url ?>' target='_blank' title='URLs' > 
+                            <i class="fa fa-link"></i> 
+                        </a>
+                        <a href='/notebook/edit/{{$topic->id}}' title='Edit'>
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a href='/notebook/notes/{{$topic->id}}' title='Notes'>
+                            <i class="fas fa-cubes"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </table>
+    </div>
 
-        <?php foreach ($childs as $child) : ?>
+    <div class='topics-table'>
+        <i class='fa fa-child'></i> Childs
+        <table>
             <tr>
-                <td class='content'>
-                    <?= $child->title ?>
-                </td>
-            </tr>
-        <?php endforeach ?>
-        
-    </table>
+                <td class='title'> Title </td>
+                <td class='title'> Actions </td>
+            </tr>            
+
+            <?php foreach ($childs as $topic) : ?>
+                <tr>
+                    <td class='title'> 
+                        <?= $topic->title ?>                        
+                    </td>
+                    <td class='actions'> 
+                        <a href='/notebook/view/{{$topic->id}}' title='View'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href='{{route("parenting.list", $topic->id)}}' title='Parentings'> 
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <a href='<?= $topic->url ?>' target='_blank' title='URLs' > 
+                            <i class="fa fa-link"></i> 
+                        </a>
+                        <a href='/notebook/edit/{{$topic->id}}' title='Edit'>
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a href='/notebook/notes/{{$topic->id}}' title='Notes'>
+                            <i class="fas fa-cubes"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </table>
+    </div>
 @endsection

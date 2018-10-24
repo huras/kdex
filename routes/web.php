@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/html', 'StudyController@html');
+
 Route::get('/notebook', 'KnowledgeController@list');
 Route::get('/notebook/view/{id}', 'KnowledgeController@view');
 Route::get('/notebook/new', 'KnowledgeController@new');

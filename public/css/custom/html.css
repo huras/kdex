@@ -1,0 +1,72 @@
+.simple-slick .item{
+    height: 250px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#slider_001 .item{
+    height: auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-slider .item{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenshots-slider .item{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.screenshots-slider .item img{
+    height: auto;
+    width: 100%;
+}
+
+/* ========================================= */
+
+.snes-list{
+
+}
+
+.snes-list .snes-game{
+    align-items: center;
+}
+
+.snes-list .cover-slider{
+
+}
+
+.snes-list .cover-slider .item{
+
+}
+
+.snes-list .cover-slider .item img{
+    height: 256px;
+}
+
+.snes-list .screenshots-slider{
+
+}
+
+.snes-list .screenshots-slider .item{
+    margin: 0px 15px;
+}
+
+.snes-list .screenshots-slider .item img{
+    height: 224px;
+    width: 256px;
+}
