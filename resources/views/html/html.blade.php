@@ -40,6 +40,12 @@
                     <div class='item'>
                         <img src='{{asset("img/snes/mario-print-3.png")}}'>
                     </div>
+                    <div class='item'>
+                        <img src='{{asset("img/snes/mario-print-4.jpg")}}'>
+                    </div>
+                    <div class='item'>
+                        <img src='{{asset("img/snes/mario-print-5.gif")}}'>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,7 +116,7 @@
             
             dots: false,
             arrows:false,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 1500,
             
 
             slidesToShow:2,
