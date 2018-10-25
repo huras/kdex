@@ -1,0 +1,37 @@
+.flex{
+    display: flex;
+
+    &.h{
+        flex-direction: row;
+
+        &.start-h{
+            justify-content: flex-start;
+        }
+        &.end-h{
+            justify-content: flex-end;
+        }
+        &.mid-h{
+            justify-content: center;
+        }
+        &.bet-h{
+            justify-content: space-between;
+        }
+
+        &.mid-v{
+            align-items: center;
+        }
+        &.bot-v{
+            align-items: flex-end;
+        }
+    }
+    &.v{
+        flex-direction: column;
+
+        &.start-h{
+            align-items: flex-start;
+        }
+        &.end-h{
+            align-items: flex-end;
+        }
+    }
+}

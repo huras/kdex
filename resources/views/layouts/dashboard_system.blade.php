@@ -31,23 +31,36 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand" href="#">Node Knowledge "Pokedex"</a>
+                        <a class="navbar-brand" href="#">Technology Pokedex</a>
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/nodes">Nodes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/node-types">Node Types</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Node Relations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Links</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fab fa-codepen"></i>  Technology Nodes
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/nodes"><i class="fas fa-th-list"></i> Nodes</a>
+                                    <a class="dropdown-item" href="/nodes/create"><i class="fas fa-plus"></i> Add Node</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/node-types"><i class="fas fa-th-list"></i> Node Types</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item disabled" href="#"><i class="fas fa-th-list"></i> Node Relations</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item disabled" href="#"><i class="fas fa-th-list"></i> Links</a>
+                                </div>
+                            </li>                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-code"></i> HTML
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item disabled" href="#"><i class="fas fa-cut"></i> Recortes</a>                            
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/html"><i class="fas fa-gamepad"></i> Snes Roms</a>
+                                </div>
+                            </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

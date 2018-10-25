@@ -6,7 +6,7 @@
     ' becomes &#39;
  -->
 
-@extends('layouts/study')
+@extends('layouts/dashboard_system')
 
 @section('title')
     Recortador
