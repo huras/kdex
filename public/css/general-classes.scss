@@ -1,0 +1,126 @@
+// Flex Control
+.flex{
+    display: flex;
+
+    &.h{
+        flex-direction: row;
+
+        &.left{
+            justify-content: flex-start;
+        }
+        &.right{
+            justify-content: flex-end;
+        }
+        &.mid-h{
+            justify-content: center;
+        }
+        &.bet-h{
+            justify-content: space-between;
+        }
+
+        &.top{
+            align-items: flex-start;
+        }
+        &.mid-v{
+            align-items: center;
+        }
+        &.bot{
+            align-items: flex-end;
+        }
+    }
+    &.v{
+        flex-direction: column;
+
+        &.left{
+            align-items: flex-start;
+        }
+        &.right{
+            align-items: flex-end;
+        }
+        &.mid-h{
+            align-items: center;
+        }
+
+        &.mid{
+            justify-content: center;
+        }
+    }
+
+    &.mobi-column{
+        @media(max-width:$mobile-width-end){
+            flex-direction: column;
+
+            &.left{
+                align-items: flex-start;
+            }
+            &.right{
+                align-items: flex-end;
+            }
+            &.mid-h{
+                align-items: center;
+            }
+
+            &.mid{
+                justify-content: center;
+            }
+        }
+    }
+}
+
+// Text Control
+.std-text{
+    // Standard Settings
+    line-height: 1;
+    color: black;
+
+    // Font weights
+    &.regular{
+        font-weight: 400;
+    }
+    &.bold{
+        font-weight: 700;
+    }
+
+    // Font Families
+    &.montserrat{
+        font-family: $font-montserrat;
+    }
+    &.roboto{
+        font-family: $font-roboto;
+    }
+    
+    // Font sizes
+    &.s12{
+        font-size: 1.2rem;
+    }
+    &.s14{
+        font-size: 1.4rem;
+    }
+    &.s16{
+        font-size: 1.6rem;
+    }
+    &.s18{
+        font-size: 1.6rem;
+    }
+    &.s24{
+        font-size: 2.4rem;
+    }
+
+    &.underline{
+        text-decoration: underline;
+    }
+
+    // Colors
+    &.red{
+        color: $m_red;
+    }
+    &.white{
+        color: $text-white;
+    }
+    &.l-gray{
+        color: $text-light_gray;
+    }
+    &.d-gray{
+        color: $text-dark_gray;
+    }
+}

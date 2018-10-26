@@ -16,14 +16,20 @@ Route::get('/', 'DashboardSystemController@home');
 Route::get('/nodes', 'NodeController@index');
 Route::get('/nodes/create', 'NodeController@create');
 Route::post('/nodes/create', 'NodeController@store');
+Route::get('/nodes/find', 'NodeController@find');
 
 Route::get('/node-types', 'NodeTypeController@index');
+
+Route::get('/node-relations', 'NodeRelationController@index');
+Route::get('/node-relations/create', 'NodeRelationController@create');
+Route::post('/node-relations/create', 'NodeRelationController@store');
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/html', 'StudyController@html');
+Route::get('/htmls', 'StudyController@htmls');
+Route::get('/snes/roms', 'StudyController@snesRoms');
 
 Route::get('/notebook', 'KnowledgeController@list');
 Route::get('/notebook/view/{id}', 'KnowledgeController@view');

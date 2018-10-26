@@ -21,6 +21,8 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">        
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
         @yield('styles')
     </head>
     <body>
@@ -46,7 +48,8 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/node-types"><i class="fas fa-th-list"></i> Node Types</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item disabled" href="#"><i class="fas fa-th-list"></i> Node Relations</a>
+                                    <a class="dropdown-item" href="/node-relations"><i class="fas fa-th-list"></i> Node Relations</a>
+                                    <a class="dropdown-item" href="/node-relations/create"><i class="fas fa-plus"></i> Add Relation</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item disabled" href="#"><i class="fas fa-th-list"></i> Links</a>
                                 </div>
@@ -56,9 +59,9 @@
                                     <i class="fas fa-code"></i> HTML
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item disabled" href="#"><i class="fas fa-cut"></i> Recortes</a>                            
+                                <a class="dropdown-item" href="/htmls"><i class="fas fa-cut"></i> Recortes</a>                            
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/html"><i class="fas fa-gamepad"></i> Snes Roms</a>
+                                <a class="dropdown-item" href="/snes/roms"><i class="fas fa-gamepad"></i> Snes Roms</a>
                                 </div>
                             </li>
                         </ul>
@@ -76,6 +79,8 @@
 
         <script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
         <script src="{{ asset('js/moment.js') }}"></script>
         <script src="{{ asset('js/underscore-min.js') }}"></script>
         <script src="{{ asset('js/clndr.js') }}"></script>
