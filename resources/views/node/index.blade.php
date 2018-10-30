@@ -24,26 +24,39 @@
             </nav>
         </div>
         <div class='row'>
-            <table class="table table-hover table-dark">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Type</th>
-                <th scope="col">Name</th>
-                <th scope="col">Short Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($nodes as $node) : ?>
-                    <tr>
-                    <th scope="row">{{$node->id}}</th>
-                    <td>{{$node->Type->name}}</td>
-                    <td>{{$node->name}}</td>
-                    <td>{{$node->short_description}}</td>
-                    </tr>
-                <?php endforeach ?>
-            </tbody>
-            </table>
+            <?php foreach ($nodes as $node) : ?>
+                <div class='col-6'>                
+                    <div class='node-item' id='item-{{$node->id}}'>
+                        <div class='cabeca' data-toggle="collapse" data-target="#item-{{$node->id}}-tray" onclick='toggleItemActiveClass("item-{{$node->id}}", "node-item")'>
+                            <div class='titulo'> {{$node->name}} </div>
+                            <div class='acoes'>
+                                <div class='colapse-btn open-btn' data-toggle="collapse" data-target="#item-{{$node->id}}-tray" onclick='toggleItemActiveClass("item-{{$node->id}}", "node-item")'>
+                                    <i class='fa fa-angle-down'></i>
+                                </div>
+                                <div class='colapse-btn close-btn' data-toggle="collapse" data-target="#item-{{$node->id}}-tray" onclick='toggleItemActiveClass("item-{{$node->id}}", "node-item")'>
+                                    <i class='fa fa-angle-up'></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='sub-lista collapse' id="item-{{$node->id}}-tray">
+                            <table class="table table-hover table-dark">
+                                <thead>
+                                    <tr>                                    
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Short Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>                            
+                                        <td>{{$node->Type->name}}</td>
+                                        <td>{{$node->short_description}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
         </div>
     </div>    
 @endsection

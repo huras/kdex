@@ -13,3 +13,17 @@ function openTabByGroup(evt, tabID, itemsCommonClass, linksCommonClass) {
     }
     evt.currentTarget.classList.add("active");
 }
+
+function toggleItemActiveClass(id, itemsCommonClass){
+    x = document.getElementById(id);
+    links = document.getElementsByClassName(itemsCommonClass);
+    for (i = 0; i < links.length; i++) {
+        if(links[i] != x)
+            links[i].classList.remove("active");
+    }    
+  
+    if(!x.classList.contains('active'))
+      x.classList.add('active');
+    else
+      x.classList.remove('active');
+}

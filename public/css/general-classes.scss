@@ -1,4 +1,4 @@
-// Flex Control
+//======================================================== Flex Control
 .flex{
     display: flex;
 
@@ -46,7 +46,7 @@
         }
     }
 
-    &.mobi-column{
+    &.mobile-v{
         @media(max-width:$mobile-width-end){
             flex-direction: column;
 
@@ -67,7 +67,7 @@
     }
 }
 
-// Text Control
+//======================================================== Text Control
 .std-text{
     // Standard Settings
     line-height: 1;
@@ -122,5 +122,48 @@
     }
     &.d-gray{
         color: $text-dark_gray;
+    }
+}
+
+//======================================================== Custom Checkbox
+.custom-checkbox{
+    position: relative;
+
+    input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+
+        @include c-flex;
+
+        i{
+            visibility: hidden;            
+        }
+    }
+
+    /* On mouse-over, add a grey background color */
+    &:hover input ~ .checkmark {
+        
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    input:checked ~ .checkmark {
+        // background-color: $m_red;
+    }
+
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark i {
+        visibility: visible;
     }
 }

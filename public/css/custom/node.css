@@ -1,0 +1,83 @@
+.node-item{
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.node-item .cabeca{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    border: 1px solid #ebebeb;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.node-item .cabeca .titulo{
+    padding-left: 13px;
+
+    /* Text Properties */
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    color: #424242;
+}
+
+.node-item .cabeca .acoes{
+    margin-right: 30px;
+}
+
+.node-item .cabeca .acoes .colapse-btn{
+    border: 2px #424242 solid;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.node-item .cabeca .acoes .colapse-btn i{
+    margin-top: 2px;
+    color: #424242;
+}
+
+.node-item .cabeca .acoes .close-btn{
+    display: none;
+}
+
+.node-item.active .cabeca{
+    background-color: #505050;
+}
+
+.node-item.active .cabeca .titulo{
+    color: white;                        
+}
+
+.node-item.active .cabeca .acoes{
+}
+
+.node-item.active .cabeca .acoes .colapse-btn{
+    border: 2px white solid;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.node-item.active .cabeca .acoes .colapse-btn i{
+    margin-top:0px;
+    color: #ffffff;
+}
+
+.node-item.active .cabeca .acoes .open-btn{
+    display: none;
+}
+
+.node-item.active .cabeca .acoes .close-btn{                            
+    color: white;
+}
