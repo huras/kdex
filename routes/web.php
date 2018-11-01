@@ -13,6 +13,11 @@
 
 Route::get('/', 'DashboardSystemController@home');
 
+Route::get('/topico/all', 'TopicDexController@all');
+Route::get('/topico/explore/{id}', 'TopicDexController@explore');
+Route::get('/topico/view/{id}', 'TopicDexController@view');
+Route::get('/topico/roots/{id}', 'TopicDexController@roots');
+
 Route::get('/nodes', 'NodeController@index');
 Route::get('/nodes/create', 'NodeController@create');
 Route::post('/nodes/create', 'NodeController@store');
